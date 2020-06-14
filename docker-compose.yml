@@ -31,6 +31,16 @@ services:
       - "./aira-ml-api/naive_bayes.joblib:/app/naive_bayes.joblib"
     networks:
       - backend
+  python-info-consumer:
+    container_name: aira-python-info-consumer
+    build:
+      context: ./aira-info-consumer
+      dockerfile: Dockerfile
+    volumes: 
+      - "./aira-info-consumer/:/aira-info-consumer"
+      - "./aira-info-consumer/naive_bayes.joblib:/app/naive_bayes.joblib"
+    networks:
+      - backend
 networks:
   frontend:
     name: aira-frontend

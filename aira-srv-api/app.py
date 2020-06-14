@@ -34,11 +34,18 @@ def get_postos_combustiveis():
     result = flask.jsonify(df.to_dict(orient='records'))
     return result, 200
 
-@app.route('/postos-combustiveis', methods=['POST', 'OPTIONS'])
+@app.route('/notificar-atualizacao-postos-combustiveis', methods=['POST', 'OPTIONS'])
 @cross_origin(origin='*', headers=['Content-Type'])
-def post_postos_combustiveis():
+def notificar_postos_combustiveis_atualizados():
     channel = connect_bus()
     channel.basic_publish(exchange='', routing_key='updated', body="postos_combustiveis")
+    return "", 200
+
+@app.route('/notificar-risco-acidente', methods=['POST', 'OPTIONS'])
+@cross_origin(origin='*', headers=['Content-Type'])
+def notificar_risco_acidente():
+    channel = connect_bus()
+    channel.basic_publish(exchange='', routing_key='updated', body="risco_acidente")
     return "", 200
 
 if (__name__ == '__main__'):

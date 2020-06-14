@@ -17,7 +17,7 @@ from connection import *
 from set_interval import *
 from random import randrange
 
-@setInterval(10)
+@setInterval(30)
 def start_send_data(connection, channel):
     if connection.is_open:
         data = json.dumps(fake_aira_data[randrange(99)], indent=4)
@@ -27,7 +27,7 @@ def start_send_data(connection, channel):
 
 postos_combustiveis = load_postos_combustiveis()
 
-def callback_postos_atualizados(ch, method, properties, body):
+def callback_queue_update(ch, method, properties, body):
     print("Received updated event %r" % body)
     if body == b'postos_combustiveis':
         load_postos_combustiveis_data()
@@ -35,11 +35,11 @@ def callback_postos_atualizados(ch, method, properties, body):
         postos_combustiveis = load_postos_combustiveis()
         say("Olá Dejair, recebemos uma atualização dos postos de combustíveis")
     if body == b'risco_acidente':
-        say("Olá Dejair, detectei um risco de acidente baseado nas informações coletadas até o momento. Não seria um bom momento para fazer uma pausa e descansar um pouquinho?")
+        say("Olá Dejair, detectei um risco de acidente baseado nas informações coletadas até o momento. Esse pode ser um bom momento para fazer uma pausa e descansar um pouquinho.")
 
 def start():
     connection, channel = connect_bus()
-    channel.basic_consume(queue='updated', auto_ack=True, on_message_callback=callback_postos_atualizados)
+    channel.basic_consume(queue='updated', auto_ack=True, on_message_callback=callback_queue_update)
     mq_receive_thread = threading.Thread(target=channel.start_consuming)
     mq_receive_thread.start()
 
@@ -68,6 +68,10 @@ def start():
                 # Se contém a palavra aira, inicia a comunicação com o motorista
                 if "box" in text:
                     say("Bom dia Dejair")
+
+                # Se contém a palavra aira, inicia a comunicação com o motorista
+                if "posso pegar minha carteira" in text:
+                    print("*** enviando alerta silencioso ***")
 
                 # Se perguntou sobre posto mais perto, acessa as informações dos postos
                 if "posto" in text and "perto" in text:
