@@ -2,31 +2,22 @@ from joblib import load, dump
 import flask
 from flask import request
 from flask_cors import CORS, cross_origin
-from sklearn.preprocessing import StandardScaler
-import numpy as np
 import pandas as pd
-import os.path
 from os import path
 import pika
-import time
 
 app = flask.Flask(__name__)
 CORS(app)
 
-while True:
-    try:
-        connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq'))
-        channel = connection.channel()
-        channel.queue_declare(queue='updated')
-        break
-    except:
-        time.sleep(0.1)
-
+def connect_bus():
+    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq', heartbeat=6))
+    channel = connection.channel()
+    channel.queue_declare(queue='updated')
+    
+    return channel
 
 column_names = ['posto', 'latitude', 'longitude', 'recomendado']
 def generate_postos_combustiveis_data():
-    channel.basic_publish(exchange='', routing_key='updated', body="postos_combustiveis")
-
     df = pd.DataFrame(columns=column_names)
     rows = [{'posto': 'posto são paulo', 'latitude': 1, 'longitude': 1, 'recomendado': True}, {'posto': 'posto curitiba', 'latitude': 2, 'longitude': 2, 'recomendado': True}, {'posto': 'posto rio de janeiro', 'latitude': 3, 'longitude': 3, 'recomendado': True}, ]
     for row in rows:
@@ -46,6 +37,7 @@ def get_postos_combustiveis():
 @app.route('/postos-combustiveis', methods=['POST', 'OPTIONS'])
 @cross_origin(origin='*', headers=['Content-Type'])
 def post_postos_combustiveis():
+    channel = connect_bus()
     channel.basic_publish(exchange='', routing_key='updated', body="postos_combustiveis")
     return "", 200
 

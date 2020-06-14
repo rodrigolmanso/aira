@@ -9,3 +9,4 @@ def say(text):
     engine.say(text)
     engine.runAndWait()
     engine.stop()
+    print(text)
