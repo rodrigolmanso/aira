@@ -21,8 +21,6 @@ def start_send_data(connection, channel):
         data = json.dumps(fake_box_data[1], indent=4)
         channel.basic_publish(exchange='', routing_key='info_from_boxapp', body=data)
         print('BoxApp: Informações de Navegação Enviadas para o Servidor')
-    else:
-        print('start_send_data no connection')
 
 def start():
     connection, channel, mq_receive_thread = connect_bus()
