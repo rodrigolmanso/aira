@@ -8,7 +8,6 @@ from tts_utils import *
 from data_utils import *
 
 def connect_bus():
-    print('connecting to bus...')
     connection = pika.BlockingConnection(pika.ConnectionParameters('localhost', heartbeat=600))
     channel = connection.channel()
     channel.queue_declare(queue='info_from_boxapp')

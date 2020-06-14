@@ -21,6 +21,14 @@
 - **Pika Python AMQP Client Library v1.1.0** - <https://pypi.org/project/pika/>
 - **Joblib v0.14.1** - <https://pypi.org/project/joblib/>
 - **Retry v0.9.2** - <https://pypi.org/project/retry/>
+- **SciKit Learn v0.23.1** - <https://pypi.org/project/scikit-learn/>
+- **SciKit Plot v0.3.7** - <https://pypi.org/project/scikit-plot/>
+- **dfply v0.3.3** - <https://pypi.org/project/dfply/>
+- **dtreeviz v0.8.2** - <https://pypi.org/project/dtreeviz/>
+- **MatPlotLib v3.2.1** - <https://pypi.org/project/matplotlib/>
+- **Seaborn v0.10.1** - <https://pypi.org/project/seaborn/>
+
+
 
 ## Componentes da Solução
 ### BoxApp
@@ -39,6 +47,10 @@ Como o modelo não temos base histórica, optamos por gerar dados fake através 
 - latitude = Latitude/Longitude (latitude)
 - longitude = Latitude/Longitude (longitude)
 - acidente = Boolean (0 - 1)
+
+Treinamento do modelo usando o COLAB
+- Executar o comando `pip3 install -r requirements.txt` para instalar as dependências.
+- Executar o comando `python aria_training_model.py` na pasta **training-model**
 
 ## Instruções de Instalação Servidor
 ### Windows

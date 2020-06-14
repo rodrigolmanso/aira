@@ -34,6 +34,8 @@ def callback_postos_atualizados(ch, method, properties, body):
         global postos_combustiveis
         postos_combustiveis = load_postos_combustiveis()
         say("Olá Dejair, recebemos uma atualização dos postos de combustíveis")
+    if body == b'risco_acidente':
+        say("Olá Dejair, detectei um risco de acidente baseado nas informações coletadas até o momento. Não seria um bom momento para fazer uma pausa e descansar um pouquinho?")
 
 def start():
     connection, channel = connect_bus()
