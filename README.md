@@ -36,14 +36,14 @@
 - Instalar o [Python 3.8.3 ](https://www.python.org/ftp/python/3.8.3/python-3.8.3-amd64.exe).
 - Caso não instale o PyAudio através do script de instalação automática, [faça o download do pacote](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio) e instale manualmente usando o comando pip install + nome do pacote baixado de acordo com a versão do Windows e do Python conforme instruções na [thread do stackoverflow](https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-windows-how-to-solve-error-microsoft-visual-c-14).
 - Clonar o projeto.
-- Executar o comando `pip3 install -r requirements.txt` na pasta **box-app**
-- Executar o comando `python voice_app.py` na pasta **box-app**
+- Executar o comando `pip3 install -r requirements.txt` na pasta **box-app**.
+- Executar o comando `python voice_app.py` na pasta **box-app**.
 ### Raspberry Pi 3
 - [Instalar o Raspberry Pi OS no cartão SD](https://www.raspberrypi.org/downloads/).
 - Executar o comando `sudo apt install libespeak-dev pulseaudio python-pyaudio python3-pyaudio -y` para instalar as dependências do linux.
 - Clonar o projeto.
-- Executar o comando `pip3 install -r requirements.txt` na pasta **box-app**
-- Executar o comando `python voice_app.py` na pasta **box-app**
+- Executar o comando `pip3 install -r requirements.txt` na pasta **box-app**.
+- Executar o comando `python voice_app.py` na pasta **box-app**.
 
 ## Referências
 - <https://github.com/alphacep/vosk>
