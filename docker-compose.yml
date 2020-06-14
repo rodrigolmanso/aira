@@ -17,6 +17,8 @@ services:
       - "5001:5000"
     volumes: 
       - "./box-srv-api/:/app"
+    networks:
+      - backend
   python-ml-api:
     container_name: binobox-python-ml-app
     build:
@@ -26,6 +28,8 @@ services:
       - "5000:5000"
     volumes: 
       - "./box-ml-api/:/app"
+    networks:
+      - backend
 networks:
   frontend:
     name: binobox-frontend

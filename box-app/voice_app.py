@@ -4,6 +4,7 @@
 
 from vosk import Model, KaldiRecognizer
 import os
+import time
 
 if not os.path.exists("model"):
     print ("Please download the model from https://github.com/alphacep/vosk-api/blob/master/doc/models.md and unpack as 'model' in the current folder.")
@@ -14,6 +15,8 @@ import threading
 
 def callback(ch, method, properties, body):
     print("Received updated event %r" % body)
+    if body == b'postos_combustiveis':
+        say("Olá Dejair, recebemos uma atualização dos postos de combustíveis")
 
 connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
 channel = connection.channel()
@@ -23,20 +26,19 @@ channel.basic_consume(queue='updated', auto_ack=True, on_message_callback=callba
 mq_recieve_thread = threading.Thread(target=channel.start_consuming)
 
 import pyttsx3
-engine = pyttsx3.init()
+import pyaudio
+model = Model("model")
+rec = KaldiRecognizer(model, 16000)
+
+p = pyaudio.PyAudio()
+stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8000)
 
 def start():
-    import pyaudio
     import json
     from joblib import load, dump
     import numpy as np
     import pandas as pd
 
-    model = Model("model")
-    rec = KaldiRecognizer(model, 16000)
-
-    p = pyaudio.PyAudio()
-    stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8000)
     stream.start_stream()
 
     mq_recieve_thread.start()
@@ -48,9 +50,6 @@ def start():
 
         if rec.AcceptWaveform(data):
             text = json.loads(rec.Result())["text"]
-
-            if text == '':
-                continue
 
             if "box" in text:
                 send("Dejair: " + text)
@@ -68,8 +67,10 @@ def main():
     start()
 
 def say(text):
+    engine = pyttsx3.init()
     engine.say(text)
     engine.runAndWait()
+    engine.stop()
 
 def send(text):
     print(text)
@@ -79,5 +80,10 @@ if __name__ == "__main__":
     try:
         main()
     finally:
+        stream.stop_stream()
+        stream.close()
+        p.terminate()
+
+        channel.stop_consuming()
         connection.close()
-        mq_receiver_thread._Thread__stop()
+        mq_recieve_thread._Thread__stop()

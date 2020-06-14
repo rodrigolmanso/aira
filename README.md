@@ -19,6 +19,7 @@
 - **Pandas v1.0.4** - <https://pypi.org/project/pandas/>
 - **Pika Python AMQP Client Library v1.1.0** - <https://pypi.org/project/pika/>
 - **Joblib v0.14.1** - <https://pypi.org/project/joblib/>
+- **Retry v0.9.2** - <https://pypi.org/project/retry/>
 
 ## Componentes da Solução
 ### BoxApp
