@@ -1,4 +1,4 @@
-# Box
+# ARIA - Artificial Intelligence for Remote Access
 
 ## Arquitetura
 ### Ferramentas
