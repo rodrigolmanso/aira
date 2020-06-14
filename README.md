@@ -28,8 +28,6 @@
 - **MatPlotLib v3.2.1** - <https://pypi.org/project/matplotlib/>
 - **Seaborn v0.10.1** - <https://pypi.org/project/seaborn/>
 
-
-
 ## Componentes da Solução
 ### AIRA (IA de Comunicação)
 Esse é o apliativo principal, o engine que faz a comunicação com a plataforma, grava e recupera informações offline, faz o reconhecimento de voz e a sintetização das respostas e envia alertas recebidos pela plataforma para o motorista.
