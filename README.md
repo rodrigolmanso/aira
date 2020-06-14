@@ -44,6 +44,7 @@
 - Clonar o projeto.
 - Executar o comando `pip3 install -r requirements.txt` na pasta **box-app**.
 - Executar o comando `python voice_app.py` na pasta **box-app**.
+- __ATENÇÃO: É necessário possuir um microfone usb e uma caixa de som ligada na Raspberry para que o projeto seja executado corretamente__.
 
 ## Referências
 - <https://github.com/alphacep/vosk>
