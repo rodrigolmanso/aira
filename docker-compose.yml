@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+  rabbitmq:
+    container_name: binobox-rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - backend
+  python-srv-api:
+    container_name: binobox-python-srv-app
+    build:
+      context: ./box-srv-api
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5000"
+    volumes: 
+      - "./box-srv-api/:/app"
+  python-ml-api:
+    container_name: binobox-python-ml-app
+    build:
+      context: ./box-ml-api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes: 
+      - "./box-ml-api/:/app"
+networks:
+  frontend:
+    name: binobox-frontend
+    driver: bridge
+  backend:
+    name: binobox-backend
+    driver: bridge
