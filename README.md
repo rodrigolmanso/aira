@@ -31,9 +31,13 @@
 
 
 ## Componentes da Solução
-### BoxApp
+### ARIA (IA de Comunicação)
+Esse é o apliativo principal, o engine que faz a comunicação com a plataforma, grava e recupera informações offline, faz o reconhecimento de voz e a sintetização das respostas e envia alertas recebidos pela plataforma para o motorista.
+Pode ser executado no Windows ou Raspberry Pi 3b. É possível utilizar em outras plataformas mediante ajustes na configuração.
 ### API Servidor
+API REST que possibilita a integração entre o aplicativo mobile, portal e do engine de comunicação (ARIA).
 ### API Machine Learning
+API REST que possibilita a integração dos diversos sitemas com os modelos de Machine Learning treinados.
 ### Treinamento do Modelo de Machine Learning
 Como o modelo não temos base histórica, optamos por gerar dados fake através do site [generatedata.com](https://www.generatedata.com/), onde geramos dados fake para o Brasil na seguinte composição:
 - hipertenso = Boolean (0 - 1)
@@ -48,16 +52,22 @@ Como o modelo não temos base histórica, optamos por gerar dados fake através 
 - longitude = Latitude/Longitude (longitude)
 - acidente = Boolean (0 - 1)
 
-Treinamento do modelo usando o COLAB
+#### Treinamento do modelo usando Python
 - Executar o comando `pip3 install -r requirements.txt` para instalar as dependências.
 - Executar o comando `python aria_training_model.py` na pasta **training-model**
+
+#### Treinamento do modelo usando o [COLAB](https://colab.research.google.com/)
+- Abrir o arquivo **ARIA_Training_Model.ipynb** no [COLAB](https://colab.research.google.com/).
+- Enviar os arquivos de suporte workflow.jpg, treinamento overview.jpg e box_data.csv que estão na pasta **training-model**.
+- Executar tudo.
+- Será gerado um arquivo com o nome 'naive_bayes.joblib' contendo o dump do classificador Naive Bayes.
 
 ## Instruções de Instalação Servidor
 ### Windows
 - [Instalar o Docker Desktop](https://docs.docker.com/docker-for-windows/install/).
 - Executar o comando `docker-compose up` dentro da pasta raiz do projeto, onde se encontra o arquivo **docker-compose.yml** e o docker irá subir o RabbitMQ, a API do Serviço e a API do Machine Lerning.
 
-## Instruções de Instalação BoxApp
+## Instruções de Instalação ARIA
 ### Windows
 - Instalar o [Python 3.8.3 ](https://www.python.org/ftp/python/3.8.3/python-3.8.3-amd64.exe).
 - Caso não instale o PyAudio através do script de instalação automática, [faça o download do pacote](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio) e instale manualmente usando o comando pip install + nome do pacote baixado de acordo com a versão do Windows e do Python conforme instruções na [thread do stackoverflow](https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-windows-how-to-solve-error-microsoft-visual-c-14).
