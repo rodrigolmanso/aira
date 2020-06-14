@@ -30,11 +30,6 @@
 ### Windows
 - [Instalar o Docker Desktop](https://docs.docker.com/docker-for-windows/install/).
 - Executar o comando `docker-compose up` dentro da pasta raiz do projeto, onde se encontra o arquivo **docker-compose.yml** e o docker irá subir o RabbitMQ, a API do Serviço e a API do Machine Lerning.
-### Linux (Ubuntu)
-Siga as instruções de instalação de acordo com a plataforma que utilizará para rodar os containers.
-- [Instalar o Docker](https://docs.docker.com/install).
-- [Instalar o Docker Compose](https://docs.docker.com/compose/install/).
-- Executar o comando `docker-compose up` dentro da pasta raiz do projeto, onde se encontra o arquivo **docker-compose.yml** e o docker irá subir o RabbitMQ, a API do Serviço e a API do Machine Lerning.
 
 ## Instruções de Instalação BoxApp
 ### Windows
@@ -43,16 +38,12 @@ Siga as instruções de instalação de acordo com a plataforma que utilizará p
 - Clonar o projeto.
 - Executar o comando `pip3 install -r requirements.txt` na pasta **box-app**
 - Executar o comando `python voice_app.py` na pasta **box-app**
-### Linux (Ubuntu)
-- Instalar o [Python 3.8.3 ](https://www.python.org/ftp/python/3.8.3/python-3.8.3-amd64.exe).
-- Clonar o projeto.
-- Executar o comando `sudo apt install libespeak-dev pulseaudio python-pyaudio python3-pyaudio -y` para instalar as dependências do linux.
-- Executar o comando `pip3 install -r requirements.txt` na pasta **box-app**
 ### Raspberry Pi 3
 - [Instalar o Raspberry Pi OS no cartão SD](https://www.raspberrypi.org/downloads/).
 - Executar o comando `sudo apt install libespeak-dev pulseaudio python-pyaudio python3-pyaudio -y` para instalar as dependências do linux.
 - Clonar o projeto.
 - Executar o comando `pip3 install -r requirements.txt` na pasta **box-app**
+- Executar o comando `python voice_app.py` na pasta **box-app**
 
 ## Referências
 - <https://github.com/alphacep/vosk>
