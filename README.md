@@ -9,6 +9,7 @@
 - **RabbitMQ (Container Docker)** - <https://hub.docker.com/_/rabbitmq>
 - **WinSCP** - <https://winscp.net/eng/download.php>
 - **Putty** - <https://www.putty.org/>
+- **Postman** - <https://www.postman.com/>
 
 ### Pacotes Python
 - **Flask v1.1.1** - <https://palletsprojects.com/p/flask/>
@@ -26,6 +27,18 @@
 ### API Servidor
 ### API Machine Learning
 ### Treinamento do Modelo de Machine Learning
+Como o modelo não temos base histórica, optamos por gerar dados fake através do site [generatedata.com](https://www.generatedata.com/), onde geramos dados fake para o Brasil na seguinte composição:
+- hipertenso = Boolean (0 - 1)
+- diabetico = Boolean (0 - 1)
+- km_rodado_dia = Numeric Range (0 - 1000)
+- media_horas_sono = Numeric Range (0 - 24)
+- media_agua_diaria = Numeric Range (0 - 3)
+- cigarros_fumados = Numeric Range (0 - 60)
+- horas_descanso = Numeric Range (0 - 24)
+- ansiedade_detectada = Boolean (0 - 1)
+- latitude = Latitude/Longitude (latitude)
+- longitude = Latitude/Longitude (longitude)
+- acidente = Boolean (0 - 1)
 
 ## Instruções de Instalação Servidor
 ### Windows
@@ -55,3 +68,5 @@
 - <https://www.rabbitmq.com/tutorials/tutorial-one-python.html>
 - <https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world>
 - <https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-windows-how-to-solve-error-microsoft-visual-c-14>
+- <https://www.generatedata.com/>
+- <https://colab.research.google.com/>
