@@ -21,7 +21,7 @@
 - **Pika Python AMQP Client Library v1.1.0** - <https://pypi.org/project/pika/>
 - **Joblib v0.14.1** - <https://pypi.org/project/joblib/>
 - **Retry v0.9.2** - <https://pypi.org/project/retry/>
-- **SciKit Learn v0.23.1** - <https://pypi.org/project/scikit-learn/>
+- **SciKit Learn v0.22.2.post1** - <https://pypi.org/project/scikit-learn/>
 - **SciKit Plot v0.3.7** - <https://pypi.org/project/scikit-plot/>
 - **dfply v0.3.3** - <https://pypi.org/project/dfply/>
 - **dtreeviz v0.8.2** - <https://pypi.org/project/dtreeviz/>

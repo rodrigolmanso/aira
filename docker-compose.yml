@@ -25,9 +25,10 @@ services:
       context: ./aria-ml-api
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
+      - "5002:5000"
     volumes: 
       - "./aria-ml-api/:/app"
+      - "./aria-ml-api/naive_bayes.joblib:/app/naive_bayes.joblib"
     networks:
       - backend
 networks:
