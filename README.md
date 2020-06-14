@@ -51,6 +51,8 @@ Como o modelo não temos base histórica, optamos por gerar dados fake através 
 - latitude = Latitude/Longitude (latitude)
 - longitude = Latitude/Longitude (longitude)
 - acidente = Boolean (0 - 1)
+### Portal
+Portal contendo diversos dashboards e gráficos para acompanhamento dos dados coletados.
 
 #### Treinamento do modelo usando Python
 - Executar o comando `pip3 install -r requirements.txt` para instalar as dependências.
