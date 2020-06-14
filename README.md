@@ -1,4 +1,10 @@
 # AIRA - Artificial Intelligence for Remote Access
+A AIRA é um dispositivo ativado por comando de voz.
+Dotado de inteligência artificial, ela se conecta à rede de dados e é capaz de trazer informações ao motorista com um único comando.
+Mais do que isso, a AIRA aprende conversando e interagindo com o motorista, mapeia suas preferências, tais como pontos de parada favoritos, rotas mais utilizadas e informações mais importantes para o motorista enquanto está no trecho.
+Além disso, permite que o motorista tenha um parceiro digital, com quem pode interagir e registrar sua rotina e através da nossa IA aprendemos sobre essa rotina e apoiamos o motorista.
+
+O AIRA nasceu a partir do Hackathon da CCR ocorrido entre os dias 12 e 14 de junho de 2020 e continua em desenvolvimento.
 
 ## Arquitetura
 ### Ferramentas
