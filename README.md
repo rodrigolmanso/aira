@@ -37,7 +37,11 @@ O AIRA nasceu a partir do Hackathon da CCR ocorrido entre os dias 12 e 14 de jun
 ## Componentes da Solução
 ### AIRA (IA de Comunicação)
 Esse é o apliativo principal, o engine que faz a comunicação com a plataforma, grava e recupera informações offline, faz o reconhecimento de voz e a sintetização das respostas e envia alertas recebidos pela plataforma para o motorista.
+Além disso, é o responsável por detectar uma frase de pânico e enviar um alerta em caso de assalto ou perigo para o motorista. Esse alerta é enviado silenciosamente, garantindo a segurança física do motorista.
 Pode ser executado no Windows ou Raspberry Pi 3b. É possível utilizar em outras plataformas mediante ajustes na configuração.
+
+### Info Consumer (Módulo de Inteligência)
+Serviço que monitora a fila de informações do sistema. É o responsável por analisar as informações coletadas do veículo e informações fornecidas pelo motorista utilizando um modelo treinado de Machine Learning. Caso seja detectado um risco de acidente, este módulo envia para o motorista um alerta, solicitando que ele efetue uma parada para descanso.
 
 ### API Servidor
 API REST que possibilita a integração entre o aplicativo mobile, portal e do engine de comunicação (AIRA).
