@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   rabbitmq:
-    container_name: aria-rabbitmq
+    container_name: aira-rabbitmq
     image: rabbitmq:3-management
     ports:
       - "5672:5672"
@@ -9,32 +9,32 @@ services:
     networks:
       - backend
   python-srv-api:
-    container_name: aria-python-srv-app
+    container_name: aira-python-srv-app
     build:
-      context: ./aria-srv-api
+      context: ./aira-srv-api
       dockerfile: Dockerfile
     ports:
       - "5001:5000"
     volumes: 
-      - "./aria-srv-api/:/app"
+      - "./aira-srv-api/:/app"
     networks:
       - backend
   python-ml-api:
-    container_name: aria-python-ml-app
+    container_name: aira-python-ml-app
     build:
-      context: ./aria-ml-api
+      context: ./aira-ml-api
       dockerfile: Dockerfile
     ports:
       - "5002:5000"
     volumes: 
-      - "./aria-ml-api/:/app"
-      - "./aria-ml-api/naive_bayes.joblib:/app/naive_bayes.joblib"
+      - "./aira-ml-api/:/app"
+      - "./aira-ml-api/naive_bayes.joblib:/app/naive_bayes.joblib"
     networks:
       - backend
 networks:
   frontend:
-    name: aria-frontend
+    name: aira-frontend
     driver: bridge
   backend:
-    name: aria-backend
+    name: aira-backend
     driver: bridge

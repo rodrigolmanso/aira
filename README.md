@@ -1,4 +1,4 @@
-# ARIA - Artificial Intelligence for Remote Access
+# AIRA - Artificial Intelligence for Remote Access
 
 ## Arquitetura
 ### Ferramentas
@@ -31,11 +31,11 @@
 
 
 ## Componentes da Solução
-### ARIA (IA de Comunicação)
+### AIRA (IA de Comunicação)
 Esse é o apliativo principal, o engine que faz a comunicação com a plataforma, grava e recupera informações offline, faz o reconhecimento de voz e a sintetização das respostas e envia alertas recebidos pela plataforma para o motorista.
 Pode ser executado no Windows ou Raspberry Pi 3b. É possível utilizar em outras plataformas mediante ajustes na configuração.
 ### API Servidor
-API REST que possibilita a integração entre o aplicativo mobile, portal e do engine de comunicação (ARIA).
+API REST que possibilita a integração entre o aplicativo mobile, portal e do engine de comunicação (AIRA).
 ### API Machine Learning
 API REST que possibilita a integração dos diversos sitemas com os modelos de Machine Learning treinados.
 ### Treinamento do Modelo de Machine Learning
@@ -56,11 +56,11 @@ Portal contendo diversos dashboards e gráficos para acompanhamento dos dados co
 
 #### Treinamento do modelo usando Python
 - Executar o comando `pip3 install -r requirements.txt` para instalar as dependências.
-- Executar o comando `python aria_training_model.py` na pasta **training-model**
+- Executar o comando `python aira_training_model.py` na pasta **training-model**
 
 #### Treinamento do modelo usando o [COLAB](https://colab.research.google.com/)
-- Abrir o arquivo **ARIA_Training_Model.ipynb** no [COLAB](https://colab.research.google.com/).
-- Enviar os arquivos de suporte workflow.jpg, treinamento overview.jpg e aria_data.csv que estão na pasta **training-model**.
+- Abrir o arquivo **AIRA_Training_Model.ipynb** no [COLAB](https://colab.research.google.com/).
+- Enviar os arquivos de suporte workflow.jpg, treinamento overview.jpg e aira_data.csv que estão na pasta **training-model**.
 - Executar tudo.
 - Será gerado um arquivo com o nome 'naive_bayes.joblib' contendo o dump do classificador Naive Bayes.
 
@@ -69,19 +69,19 @@ Portal contendo diversos dashboards e gráficos para acompanhamento dos dados co
 - [Instalar o Docker Desktop](https://docs.docker.com/docker-for-windows/install/).
 - Executar o comando `docker-compose up` dentro da pasta raiz do projeto, onde se encontra o arquivo **docker-compose.yml** e o docker irá subir o RabbitMQ, a API do Serviço e a API do Machine Lerning.
 
-## Instruções de Instalação ARIA
+## Instruções de Instalação AIRA
 ### Windows
 - Instalar o [Python 3.8.3 ](https://www.python.org/ftp/python/3.8.3/python-3.8.3-amd64.exe).
 - Caso não instale o PyAudio através do script de instalação automática, [faça o download do pacote](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio) e instale manualmente usando o comando pip install + nome do pacote baixado de acordo com a versão do Windows e do Python conforme instruções na [thread do stackoverflow](https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-windows-how-to-solve-error-microsoft-visual-c-14).
 - Clonar o projeto.
-- Executar o comando `pip3 install -r requirements.txt` na pasta **aria-app**.
-- Executar o comando `python voice_app.py` na pasta **aria-app**.
+- Executar o comando `pip3 install -r requirements.txt` na pasta **aira-app**.
+- Executar o comando `python voice_app.py` na pasta **aira-app**.
 ### Raspberry Pi 3
 - [Instalar o Raspberry Pi OS no cartão SD](https://www.raspberrypi.org/downloads/).
 - Executar o comando `sudo apt install libespeak-dev pulseaudio python-pyaudio python3-pyaudio -y` para instalar as dependências do linux.
 - Clonar o projeto.
-- Executar o comando `pip3 install -r requirements.txt` na pasta **aria-app**.
-- Executar o comando `python voice_app.py` na pasta **aria-app**.
+- Executar o comando `pip3 install -r requirements.txt` na pasta **aira-app**.
+- Executar o comando `python voice_app.py` na pasta **aira-app**.
 - __ATENÇÃO: É necessário possuir um microfone usb e uma caixa de som ligada na Raspberry para que o projeto seja executado corretamente__.
 
 ## Referências
