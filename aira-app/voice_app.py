@@ -66,7 +66,7 @@ def start():
                 print(text)
 
                 # Se contém a palavra aira, inicia a comunicação com o motorista
-                if "aira" in text:
+                if "box" in text:
                     say("Bom dia Dejair")
 
                 # Se perguntou sobre posto mais perto, acessa as informações dos postos
