@@ -51,7 +51,7 @@ warnings.filterwarnings("ignore")
 """## Importando a Base de Dados"""
 
 # Carregando o dataset
-df = pd.read_csv('box_data.csv', sep = '|', encoding = 'latin-1')
+df = pd.read_csv('aria_data.csv', sep = '|', encoding = 'latin-1')
 
 """## Análise Exploratória dos dados"""
 

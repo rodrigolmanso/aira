@@ -12,7 +12,7 @@ import json
 from tts_utils import *
 from asr_utils import *
 from data_utils import *
-from fake_box_data import *
+from fake_aria_data import *
 from connection import *
 from set_interval import *
 from random import randrange
@@ -20,10 +20,10 @@ from random import randrange
 @setInterval(10)
 def start_send_data(connection, channel):
     if connection.is_open:
-        data = json.dumps(fake_box_data[randrange(99)], indent=4)
+        data = json.dumps(fake_aria_data[randrange(99)], indent=4)
         channel.basic_publish(
-            exchange='', routing_key='info_from_boxapp', body=data)
-        print('BoxApp: Informações de Navegação Enviadas para o Servidor')
+            exchange='', routing_key='info_from_ariaapp', body=data)
+        print('AriaApp: Informações de Navegação Enviadas para o Servidor')
 
 postos_combustiveis = load_postos_combustiveis()
 
@@ -65,8 +65,8 @@ def start():
                 text = json.loads(rec.Result())["text"]
                 print(text)
 
-                # Se contém a palavra box, inicia a comunicação com o motorista
-                if "box" in text:
+                # Se contém a palavra aria, inicia a comunicação com o motorista
+                if "aria" in text:
                     say("Bom dia Dejair")
 
                 # Se perguntou sobre posto mais perto, acessa as informações dos postos

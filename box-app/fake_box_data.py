@@ -1,4 +1,4 @@
-fake_box_data = [
+fake_aria_data = [
 	{"hipertenso": "1", "diabetico": "1", "km_rodado_dia": 54, "media_horas_sono": 6, "media_agua_diaria": 0, "cigarros_fumados": 3, "horas_descanso": 6, "ansiedade_detectada": "0", "latitude": "-2.239", "longitude": "128.37134"},
 	{"hipertenso": "0", "diabetico": "0", "km_rodado_dia": 819, "media_horas_sono": 24, "media_agua_diaria": 2, "cigarros_fumados": 59, "horas_descanso": 8, "ansiedade_detectada": "1", "latitude": "-78.29687", "longitude": "68.14179"},
 	{"hipertenso": "0", "diabetico": "0", "km_rodado_dia": 778, "media_horas_sono": 13, "media_agua_diaria": 2, "cigarros_fumados": 54, "horas_descanso": 2, "ansiedade_detectada": "1", "latitude": "-27.50906", "longitude": "1.09705"},

@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   rabbitmq:
-    container_name: binobox-rabbitmq
+    container_name: aria-rabbitmq
     image: rabbitmq:3-management
     ports:
       - "5672:5672"
@@ -9,31 +9,31 @@ services:
     networks:
       - backend
   python-srv-api:
-    container_name: binobox-python-srv-app
+    container_name: aria-python-srv-app
     build:
-      context: ./box-srv-api
+      context: ./aria-srv-api
       dockerfile: Dockerfile
     ports:
       - "5001:5000"
     volumes: 
-      - "./box-srv-api/:/app"
+      - "./aria-srv-api/:/app"
     networks:
       - backend
   python-ml-api:
-    container_name: binobox-python-ml-app
+    container_name: aria-python-ml-app
     build:
-      context: ./box-ml-api
+      context: ./aria-ml-api
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
     volumes: 
-      - "./box-ml-api/:/app"
+      - "./aria-ml-api/:/app"
     networks:
       - backend
 networks:
   frontend:
-    name: binobox-frontend
+    name: aria-frontend
     driver: bridge
   backend:
-    name: binobox-backend
+    name: aria-backend
     driver: bridge
