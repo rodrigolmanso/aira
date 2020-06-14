@@ -59,6 +59,7 @@ Portal contendo diversos dashboards e gráficos para acompanhamento dos dados co
 - Executar o comando `python aira_training_model.py` na pasta **training-model**
 
 #### Treinamento do modelo usando o [COLAB](https://colab.research.google.com/)
+Caso queira apenas visualizar os dados, acesse o [AIRA_Training_Model.ipynb diretamente no COLAB](https://colab.research.google.com/drive/1BbErRU33SPoHRKk_GlvjS4t2iuzJWHf-?usp=sharing).
 - Abrir o arquivo **AIRA_Training_Model.ipynb** no [COLAB](https://colab.research.google.com/).
 - Enviar os arquivos de suporte workflow.jpg, treinamento overview.jpg e aira_data.csv que estão na pasta **training-model**.
 - Executar tudo.
