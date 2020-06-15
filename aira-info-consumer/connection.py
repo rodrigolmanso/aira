@@ -5,7 +5,7 @@
 import pika
 
 def connect_bus():
-    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost', heartbeat=600))
+    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq', heartbeat=600))
     channel = connection.channel()
     channel.queue_declare(queue='info_from_airaapp')
     channel.queue_declare(queue='updated')

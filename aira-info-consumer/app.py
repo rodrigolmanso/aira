@@ -6,10 +6,13 @@ import json
 import threading
 from connection import *
 from joblib import load
+import time
+
+time.sleep(20)
 
 connection, channel = connect_bus()
 
-classifier = load('naive_bayes.joblib')
+classifier = load('/app/naive_bayes.joblib')
 
 def callback_info_from_airaapp(ch, method, properties, body):
     data = json.loads(body)
@@ -25,8 +28,6 @@ def callback_info_from_airaapp(ch, method, properties, body):
              float(data['longitude'])]]
 
     result = classifier.predict(data).tolist()[0]
-    print(result)
-    print(type(result))
     if result == int(1):
         channel.basic_publish(exchange='', routing_key='updated', body="risco_acidente")
         exit(0)

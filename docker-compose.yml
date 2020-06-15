@@ -37,7 +37,7 @@ services:
       context: ./aira-info-consumer
       dockerfile: Dockerfile
     volumes: 
-      - "./aira-info-consumer/:/aira-info-consumer"
+      - "./aira-info-consumer/:/app"
       - "./aira-info-consumer/naive_bayes.joblib:/app/naive_bayes.joblib"
     networks:
       - backend
