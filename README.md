@@ -68,6 +68,11 @@ Esse é o apliativo principal, o engine que faz a comunicação com a plataforma
 Além disso, é o responsável por detectar uma frase de pânico e enviar um alerta em caso de assalto ou perigo para o motorista. Esse alerta é enviado silenciosamente, garantindo a segurança física do motorista.
 Pode ser executado no Windows ou Raspberry Pi 3b. É possível utilizar em outras plataformas mediante ajustes na configuração.
 
+#### Palavras/Frases de Ativação Configuradas
+- box - Inicia a comunicação.
+- onde tem um posto perto? - Retorna o posto de combustível mais próximo.
+- posso pegar minha carteira? - Frase de pânico que envia uma mensagem para a plataforma, mas sem resposta audível no dispositivo.
+
 ### Info Consumer (Módulo de Inteligência)
 Serviço que monitora a fila de informações do sistema. É o responsável por analisar as informações coletadas do veículo e informações fornecidas pelo motorista utilizando um modelo treinado de Machine Learning. Caso seja detectado um risco de acidente, este módulo envia para o motorista um alerta, solicitando que ele efetue uma parada para descanso.
 
