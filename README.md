@@ -6,6 +6,29 @@ Além disso, permite que o motorista tenha um parceiro digital, com quem pode in
 
 O AIRA nasceu a partir do Hackathon da CCR ocorrido entre os dias 12 e 14 de junho de 2020 e continua em desenvolvimento.
 
+## O Problema
+Segundo revista Exame, de 2008 a 2014 a frota de caminhões cresceu 5% ao ano, o dobro do ritmo do mercado de transportes. No período, as estradas brasileiras ganharam 770.000 novos caminhões com juros subsidiados. Segundo dados informados pela consultoria NTC & Logística durante a greve de 2018, o Brasil tem cerca de 2 milhões de caminhões em atividade, num excesso de 300.000 caminhões.
+Na estrada, o caminhoneiro que corta o Brasil para transportar a carga tem enfrentado desafios que vão além de problemas mecânicos no veículo ou do tempo para entregar a mercadoria como problemas de saúdes, sono, segurança, entre outras. Desde o surgimento da pandemia, muitos desses profissionais foram contaminados ou mortos pela Covid-19, e seus problemas persistiram mesmo que a pandemia seja eliminada.
+Dados inéditos de pesquisas feitas no ano passado por duas das maiores concessionárias de rodovias do País com milhares de caminhoneiros mostram que 79% deles estão com excesso de peso ou obesos (na população em geral, esse índice é de 72%), 35% têm colesterol e/ou glicemia em níveis elevados e um terço dorme seis horas ou menos por noite.
+O trabalho do caminhoneiro é, muitas vezes, solitário. Com longas jornadas, longe de amigos e família, alguns sintomas de depressão podem surgir e trazer consigo diversos efeitos negativos para a saúde.Alguns dos sintomas possíveis são a ansiedade, mudanças frequentes de humor, perda de interesse ou prazer nas atividades, solidão, tristeza, irritabilidade, isolamento social, insônia, falta de concentração, abuso de substâncias, falta de apetite, entre outros.
+Conhecendo essas dores e o nosso público criamos o Canvas.
+
+
+## Equipe
+- Adriana Walter  (https://www.linkedin.com/in/adrianawalter/)
+- Luciana Rodrigues (https://www.linkedin.com/in/luciana-rodrigues-a8451aa3/)
+- Rodrigo Luís Manso (https://www.linkedin.com/in/rodrigolmanso/)
+- Zilceano Fonseca (https://www.linkedin.com/in/zilceano/)
+
+## Recursos Adicionais
+- [Confira nosso Pitch](https://github.com/rodrigolmanso/aira/blob/master/docs/Pitch%20-%20Hackathon%20CCR.pptx.pdf)
+- [Business Model Canvas](https://github.com/rodrigolmanso/aira/blob/master/docs/Canvas.jpeg)
+- [Matriz SWOT](https://github.com/rodrigolmanso/aira/blob/master/docs/Matriz%20SWOT.jpeg)
+- [Acompanhe nosso canal no YouTube](https://www.youtube.com/channel/UCgg001IYpbgHg4oWtc-C5jQ)
+
+![](https://github.com/rodrigolmanso/aira/blob/master/docs/Canvas.jpeg)
+![](https://github.com/rodrigolmanso/aira/blob/master/docs/Matriz%20SWOT.jpeg)
+
 ## Arquitetura
 ### Ferramentas
 - **Docker** - <https://www.docker.com/>
@@ -50,7 +73,7 @@ API REST que possibilita a integração entre o aplicativo mobile, portal e do e
 API REST que possibilita a integração dos diversos sitemas com os modelos de Machine Learning treinados.
 
 ### Portal
-Portal contendo diversos dashboards e gráficos para acompanhamento dos dados coletados.
+Portal contendo diversos dashboards e gráficos para acompanhamento dos dados coletados. [Clique aqui para visuaiizar o Portal em funcionamento](http://airaportal.com/airaportal/examples/index.html).
 
 ### Treinamento do Modelo de Machine Learning
 Como o modelo não temos base histórica, optamos por gerar dados fake através do site [generatedata.com](https://www.generatedata.com/), onde geramos dados fake para o Brasil na seguinte composição:
@@ -100,7 +123,7 @@ Caso queira apenas visualizar os dados, acesse o [AIRA_Training_Model.ipynb dire
 - Executar o comando `python voice_app.py` na pasta **aira-app**.
 - __ATENÇÃO: É necessário possuir um microfone usb e uma caixa de som ligada na Raspberry para que o projeto seja executado corretamente__.
 
-## Referências
+## Referências Técnicas
 - <https://github.com/alphacep/vosk>
 - <https://cassota.gitlab.io/pt/#projects>
 - <https://ufpafalabrasil.gitlab.io/>
@@ -110,3 +133,11 @@ Caso queira apenas visualizar os dados, acesse o [AIRA_Training_Model.ipynb dire
 - <https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-windows-how-to-solve-error-microsoft-visual-c-14>
 - <https://www.generatedata.com/>
 - <https://colab.research.google.com/>
+
+## Referências de Negócio
+- <https://exame.com/economia/o-brasil-tem-caminhoes-em-excesso-e-tera-ainda-mais/#:~:text=No%20per%C3%ADodo%2C%20as%20estradas%20brasileiras,num%20excesso%20de%20300.000%20caminh%C3%B5es.>
+- <https://g1.globo.com/to/tocantins/noticia/2020/05/11/caminhoneiros-nao-param-durante-a-pandemia-e-24-sao-diagnosticados-com-covid-19-no-tocantins.ghtml>
+- <https://www.em.com.br/app/noticia/economia/2018/06/03/internas_economia,964081/caminhoneiros-sofrem-com-saude-precaria.shtml>
+- <http://www.automotivebusiness.com.br/abinteligencia/pdf/estudo_frota_completo.pdf>
+- <https://www.automotivebusiness.com.br/noticia/29128/frota-circulante-passara-de-60-milhoes-em-2020>
+- <http://avepbrasil.com.br/blog/saude-dos-caminhoneiros/>
