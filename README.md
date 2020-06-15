@@ -26,7 +26,9 @@ Conhecendo essas dores e o nosso público criamos o Canvas.
 - [Matriz SWOT](https://github.com/rodrigolmanso/aira/blob/master/docs/Matriz%20SWOT.jpeg)
 - [Acompanhe nosso canal no YouTube](https://www.youtube.com/channel/UCgg001IYpbgHg4oWtc-C5jQ)
 
+### Business Model Canvas
 ![](https://github.com/rodrigolmanso/aira/blob/master/docs/Canvas.jpeg)
+### Matriz SWOT
 ![](https://github.com/rodrigolmanso/aira/blob/master/docs/Matriz%20SWOT.jpeg)
 
 ## Arquitetura
