@@ -6,7 +6,7 @@ Além disso, permite que o motorista tenha um parceiro digital, com quem pode in
 
 O AIRA nasceu a partir do Hackathon da CCR ocorrido entre os dias 12 e 14 de junho de 2020 e continua em desenvolvimento.
 
-## O Problema
+## Contextualização
 Segundo revista Exame, de 2008 a 2014 a frota de caminhões cresceu 5% ao ano, o dobro do ritmo do mercado de transportes. No período, as estradas brasileiras ganharam 770.000 novos caminhões com juros subsidiados. Segundo dados informados pela consultoria NTC & Logística durante a greve de 2018, o Brasil tem cerca de 2 milhões de caminhões em atividade, num excesso de 300.000 caminhões.
 Na estrada, o caminhoneiro que corta o Brasil para transportar a carga tem enfrentado desafios que vão além de problemas mecânicos no veículo ou do tempo para entregar a mercadoria como problemas de saúdes, sono, segurança, entre outras. Desde o surgimento da pandemia, muitos desses profissionais foram contaminados ou mortos pela Covid-19, e seus problemas persistiram mesmo que a pandemia seja eliminada.
 Dados inéditos de pesquisas feitas no ano passado por duas das maiores concessionárias de rodovias do País com milhares de caminhoneiros mostram que 79% deles estão com excesso de peso ou obesos (na população em geral, esse índice é de 72%), 35% têm colesterol e/ou glicemia em níveis elevados e um terço dorme seis horas ou menos por noite.
